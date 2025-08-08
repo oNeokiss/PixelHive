@@ -1,0 +1,117 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Estilos do Header */
+header {
+    background-color: #2d2d2d;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    color: #00ff88;
+    font-size: 1.8rem;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #00ff88;
+}
+
+.search input {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    background-color: #3d3d3d;
+    color: #ffffff;
+    width: 200px;
+}
+
+/* Estilos Main */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    color: #00ff88;
+    margin-bottom: 1.5rem;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #2d2d2d;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00ff88;
+}
