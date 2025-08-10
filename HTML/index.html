@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelHive - Sua Colmeia de Jogos Online</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">PixelHive</div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#games">Jogos</a></li>
+                <li><a href="#categories">Categorias</a></li>
+                <li><a href="#favorites">Favoritos</a></li>
+                <li><a href="#profile">Perfil</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Buscar jogos...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Bem-vindo ao PixelHive</h1>
+            <p>Descubra milhares de jogos incríveis em nossa colmeia digital. Aventura, ação, quebra-cabeças e muito mais te esperam!</p>
+            <a href="#games" class="cta-button">Começar a Jogar</a>
+        </div>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Categorias</h3>
+            <button class="sidebar-toggle" onclick="toggleSidebar()">✕</button>
+        </div>
+        <div class="sidebar-content">
+            <div class="category-item active" onclick="filterGames('all')" data-category="all">
+                <span class="category-icon">🎮</span>
+                <span class="category-name">Todos os Jogos</span>
+                <span class="category-count">156</span>
+            </div>
+            <div class="category-item" onclick="filterGames('action')" data-category="action">
+                <span class="category-icon">⚔️</span>
+                <span class="category-name">Ação</span>
+                <span class="category-count">42</span>
+            </div>
+            <div class="category-item" onclick="filterGames('adventure')" data-category="adventure">
+                <span class="category-icon">🗺️</span>
+                <span class="category-name">Aventura</span>
+                <span class="category-count">38</span>
+            </div>
+            <div class="category-item" onclick="filterGames('puzzle')" data-category="puzzle">
+                <span class="category-icon">🧩</span>
+                <span class="category-name">Puzzle</span>
+                <span class="category-count">29</span>
+            </div>
+            <div class="category-item" onclick="filterGames('strategy')" data-category="strategy">
+                <span class="category-icon">🏰</span>
+                <span class="category-name">Estratégia</span>
+                <span class="category-count">23</span>
+            </div>
+            <div class="category-item" onclick="filterGames('racing')" data-category="racing">
+                <span class="category-icon">🏎️</span>
+                <span class="category-name">Corrida</span>
+                <span class="category-count">18</span>
+            </div>
+            <div class="category-item" onclick="filterGames('sports')" data-category="sports">
+                <span class="category-icon">⚽</span>
+                <span class="category-name">Esportes</span>
+                <span class="category-count">15</span>
+            </div>
+            <div class="category-item" onclick="filterGames('arcade')" data-category="arcade">
+                <span class="category-icon">🕹️</span>
+                <span class="category-name">Arcade</span>
+                <span class="category-count">21</span>
+            </div>
+            <div class="category-item" onclick="filterGames('simulation')" data-category="simulation">
+                <span class="category-icon">🏗️</span>
+                <span class="category-name">Simulação</span>
+                <span class="category-count">12</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Mobile menu button -->
+    <button class="mobile-menu-btn" onclick="toggleSidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <section class="games-section" id="games">
+        <div class="games-header">
+            <h2 class="section-title fade-in">Jogos em Destaque</h2>
+            <div class="view-controls">
+                <button class="view-btn active" onclick="changeView('grid')">
+                    <span>⊞</span> Grade
+                </button>
+                <button class="view-btn" onclick="changeView('list')">
+                    <span>☰</span> Lista
+                </button>
+            </div>
+        </div>
+
+        <div class="games-grid" id="gamesGrid">
+            <div class="game-card fade-in" data-category="action">
+                <div class="game-thumbnail">
+                    <div class="play-button">▶</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">Cyber Warriors</h3>
+                    <p class="game-category">Ação</p>
+                    <div class="game-rating">
+                        <span class="star">★★★★★</span>
+                    </div>
+                    <div class="game-stats">
+                        <span>125k jogadores</span>
+                        <span>Online</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card fade-in" data-category="puzzle">
+                <div class="game-thumbnail" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+                    <div class="play-button">▶</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">Mind Maze</h3>
+                    <p class="game-category">Puzzle</p>
+                    <div class="game-rating">
+                        <span class="star">★★★★☆</span>
+                    </div>
+                    <div class="game-stats">
+                        <span>89k jogadores</span>
+                        <span>Offline</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card fade-in" data-category="adventure">
+                <div class="game-thumbnail" style="background: linear-gradient(45deg, #f093fb, #f5576c);">
+                    <div class="play-button">▶</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">Mystic Quest</h3>
+                    <p class="game-category">Aventura</p>
+                    <div class="game-rating">
+                        <span class="star">★★★★★</span>
+                    </div>
+                    <div class="game-stats">
+                        <span>203k jogadores</span>
+                        <span>Multiplayer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card fade-in" data-category="strategy">
+                <div class="game-thumbnail" style="background: linear-gradient(45deg, #4facfe, #00f2fe);">
+                    <div class="play-button">▶</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">Empire Builder</h3>
+                    <p class="game-category">Estratégia</p>
+                    <div class="game-rating">
+                        <span class="star">★★★★☆</span>
+                    </div>
+                    <div class="game-stats">
+                        <span>67k jogadores</span>
+                        <span>Online</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card fade-in" data-category="racing">
+                <div class="game-thumbnail" style="background: linear-gradient(45deg, #fa709a, #fee140);">
+                    <div class="play-button">▶</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">Speed Rush</h3>
+                    <p class="game-category">Corrida</p>
+                    <div class="game-rating">
+                        <span class="star">★★★★★</span>
+                    </div>
+                    <div class="game-stats">
+                        <span>156k jogadores</span>
+                        <span>Multiplayer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card fade-in" data-category="action">
+                <div class="game-thumbnail" style="background: linear-gradient(45deg, #a8edea, #fed6e3);">
+                    <div class="play-button">▶</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">Pixel Shooter</h3>
+                    <p class="game-category">Ação</p>
+                    <div class="game-rating">
+                        <span class="star">★★★☆☆</span>
+                    </div>
+                    <div class="game-stats">
+                        <span>94k jogadores</span>
+                        <span>Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PixelHive</h3>
+                <ul>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                    <li><a href="#">Imprensa</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Jogos</h3>
+                <ul>
+                    <li><a href="#">Novos Lançamentos</a></li>
+                    <li><a href="#">Mais Jogados</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Multiplayer</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Desenvolvedores</h3>
+                <ul>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Documentação</a></li>
+                    <li><a href="#">Submeter Jogo</a></li>
+                    <li><a href="#">Parcerias</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#">Central de Ajuda</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Reportar Bug</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 PixelHive. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+</body>
+</html>
